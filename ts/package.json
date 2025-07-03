@@ -32,6 +32,7 @@
     "@metaplex-foundation/umi": "^1.2.0",
     "@metaplex-foundation/umi-bundle-defaults": "^1.2.0",
     "@metaplex-foundation/umi-uploader-irys": "^1.2.0",
+    "@solana/kit": "^2.1.1",
     "@solana/spl-token": "^0.4.13",
     "@solana/web3.js": "^1.87.6",
     "@types/node": "^24.0.7",
@@ -42,5 +43,6 @@
   },
   "devDependencies": {
     "ts-node": "^10.9.1"
-  }
+  },
+  "packageManager": "yarn@1.22.22+sha1.ac34549e6aa8e7ead463a7407e1c7390f61a6610"
 }
