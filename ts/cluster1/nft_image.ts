@@ -17,9 +17,9 @@ umi.use(signerIdentity(signer));
 (async () => {
     try {
         //1. Load image
-        let imagePath = await readFile("cluster1/res/jeff_rugan_show.jpg");
+        let imagePath = await readFile("cluster1/res/jeffrugan.jpg");
         //2. Convert image to generic file.
-        const image = createGenericFile(imagePath, "jeff_rugan_show.jpg", {contentType: "image/jpeg"});
+        const image = createGenericFile(imagePath, "jeffrugan.jpg", {contentType: "image/jpeg"});
         //3. Upload image
         const [myUri] = await umi.uploader.upload([image]);
         console.log("Your image URI: ", myUri);
