@@ -14,6 +14,18 @@ pub mod anchor_vault_q3 {
     pub fn initialize(ctx: Context<Initialize>) -> Result<()> {
         ctx.accounts.initialize(&ctx.bumps)
     }
+
+    pub fn deposit(ctx: Context<Deposit>, amount: u64) -> Result<()> {
+        ctx.accounts.deposit(amount)
+    }
+
+    pub fn withdraw(ctx: Context<Withdraw>, amount: u64) -> Result<()> {
+        ctx.accounts.withdraw(amount)
+    }
+
+    pub fn withdraw_and_close(ctx: Context<Withdraw>) -> Result<()> {
+        ctx.accounts.withdraw_and_close()
+    }
 }
 
 #[derive(Accounts)]
@@ -40,8 +52,9 @@ pub struct Initialize<'info> {
 impl<'info> Initialize<'info> {
     pub fn initialize(&mut self, bump: &InitializeBumps) -> Result<()> {
         let rent_exempt = Rent::get()?.minimum_balance(self.vault.to_account_info().data_len());
+        let user_lamports = self.user.to_account_info().lamports();
+        require!(user_lamports >= rent_exempt, UserRelatedErrors::NotEnoughLamports);
 
-        // TODO: Validate that signer balance >= rent_exempt
 
         let cpi_program = self.system_program.to_account_info();
 
@@ -116,7 +129,10 @@ impl<'info> Deposit <'info> {
 
 impl<'info> Withdraw <'info> {
     pub fn withdraw(&self,amount: u64) -> Result<()> {
-        // TODO: Validate that remaining amount after withdrawal >= rent_exempt
+        let rent_exempt = Rent::get()?.minimum_balance(self.vault.to_account_info().data_len());
+        let vault_lamports = self.vault.to_account_info().lamports();
+        require!(vault_lamports >= rent_exempt + amount, VaultRelatedErrors::NotEnoughLamports );
+
         let cpi_program = self.system_program.to_account_info();
 
         let cpi_accounts = Transfer{
@@ -136,9 +152,32 @@ impl<'info> Withdraw <'info> {
 
         transfer(cpi_ctx, amount)
     }
+
+    pub fn withdraw_and_close(&self) -> Result<()> {
+        // Account closes after transferring all lamports
+        let vault_lamports = self.vault.to_account_info().lamports();
+
+        let cpi_program = self.system_program.to_account_info();
+
+        let cpi_accounts = Transfer{
+            from:self.vault.to_account_info(),
+            to:self.user.to_account_info()
+        };
+
+        let seeds = &[
+            b"vault",
+            self.vault_state.to_account_info().key.as_ref(),
+            &[self.vault_state.vault_bump]
+        ];
+
+        let signer_seeds = &[&seeds[..]];
+
+        let cpi_ctx = CpiContext::new_with_signer(cpi_program, cpi_accounts, signer_seeds);
+
+        transfer(cpi_ctx, vault_lamports)
+    }
 }
 
-// TODO: Implement Close account
 
 
 #[account]
@@ -151,7 +190,17 @@ impl Space for VaultState {
     const INIT_SPACE: usize = 8 + 1 * 2;
 }
 
+// An enum for custom error codes
+#[error_code]
+pub enum UserRelatedErrors {
+    NotEnoughLamports 
+}
+
+#[error_code]
+pub enum VaultRelatedErrors {
+    NotEnoughLamports 
+}
 
 
-// TODO: Implement a context to close the vault systemaccount
+
 
