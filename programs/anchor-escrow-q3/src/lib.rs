@@ -21,10 +21,8 @@ pub mod anchor_escrow_q3 {
         Ok(())
     }
 
-    pub fn take(ctx: Context<Make>, seed: u64, deposit: u64, receive: u64) -> Result<()> {
-        ctx.accounts.init_escrow(seed, receive, &ctx.bumps)?;
-        ctx.accounts.deposit(deposit)?;
-        Ok(())
+    pub fn take(ctx: Context<Take>) -> Result<()> {
+        ctx.accounts.swap()
     }
 }
 
