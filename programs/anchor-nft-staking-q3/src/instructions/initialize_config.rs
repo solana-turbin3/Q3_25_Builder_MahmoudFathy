@@ -25,9 +25,8 @@ pub struct InitializeConfig<'info> {
         mint::authority = config,          // config account is the authorized minter
     )]
     pub rewards_mint: Account<'info, Mint>,
-    // pub rent: Sysvar<'info, Rent>,
 
-    // Required programs
+    /// Required programs
     pub system_program: Program<'info, System>,
     pub token_program: Program<'info, Token>,
 }
