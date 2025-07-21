@@ -26,5 +26,8 @@ pub mod anchor_nft_staking_q3 {
             &ctx.bumps
         )
     }
+    pub fn initialize_user(ctx: Context<InitializeUser>) -> Result<()> {
+        ctx.accounts.initialize_user(&ctx.bumps)
+    }
 }
 
