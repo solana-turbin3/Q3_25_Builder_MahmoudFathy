@@ -18,6 +18,8 @@ defmodule PhoenixDappWeb.Router do
     pipe_through :browser
 
     get "/", PageController, :home
+    # Inside the scope "/" block with LiveDemoWeb as the pipeline
+    live "/counter", CounterLive, :index
   end
 
   # Other scopes may use custom stacks.
