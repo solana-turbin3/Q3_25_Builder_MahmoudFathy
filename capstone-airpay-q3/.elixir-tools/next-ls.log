@@ -846,3 +846,119 @@ PATH=/usr/bin:/home/dom/.local/share/.burrito/next_ls_erts-15.2_0.23.3/bin:/home
 11:56:27.869 [debug] sent notification server -> client window/logMessage
 
 11:56:28.028 [info] Loading 146 CA(s) from :otp store
+
+14:03:50.902 [info] Loading 146 CA(s) from :otp store
+
+14:03:50.997 id=1 [debug] handled request client -> server initialize in 62ms
+
+14:03:51.001 [debug] sent notification server -> client window/logMessage
+
+14:03:51.003 [debug] NextLS v0.23.3 has initialized!
+
+14:03:51.003 [debug] sent notification server -> client window/logMessage
+
+14:03:51.003 [debug] Log file located at /home/dom/Developer/turbin-3-builders/capstone-airpay-q3/.elixir-tools/next-ls.log
+
+14:03:51.005 [debug] sent notification server -> client window/logMessage
+
+14:03:51.005 [info] [extension] Credo initializing with options %NextLS.InitOpts.Extensions.Credo{enable: true, cli_options: []}
+
+14:03:53.334 [debug] sent notification server -> client window/logMessage
+
+14:03:53.334 [debug] Booting runtimes...
+
+14:03:53.338 id=68 [debug] sent request server -> client window/workDoneProgress/create
+
+14:03:53.342 [debug] sent notification server -> client $/progress
+
+14:03:53.362 [debug] sent notification server -> client window/logMessage
+
+14:03:53.362 [info] Beginning DB migration...
+
+14:03:53.367 [debug] sent notification server -> client window/logMessage
+
+14:03:53.367 [info] Database is on the latest version: 7
+
+14:03:53.367 [debug] sent notification server -> client window/logMessage
+
+14:03:53.367 [info] Finished DB migration...
+
+14:03:53.367 [debug] sent notification server -> client window/logMessage
+
+14:03:53.367 [info] Booting runtime for /home/dom/Developer/turbin-3-builders/capstone-airpay-q3/phoenix_dapp.
+
+- elixir: /usr/bin/elixir
+- zombie wrapper script: /home/dom/.local/share/.burrito/next_ls_erts-15.2_0.23.3/lib/next_ls-0.23.3/priv/cmd
+- working_dir: /home/dom/Developer/turbin-3-builders/capstone-airpay-q3/phoenix_dapp
+- command: /usr/bin/elixir --no-halt --sname nextls-runtime-1753787033367431143 --cookie B5KWOZJIEP7TC5LDWAQBZUILE3M23QPWYKPSADNHECVNH73HK4LA==== -S mix loadpaths --no-compile
+
+Environment: 
+
+LSP=nextls
+NEXTLS_PARENT_PID=g1h3I25leHQtbHMtMTc1Mzc4NzAzMDkxMTM1MjA0OEBYVDEyUHJvAAAA2wAAAABoiKqX
+MIX_ENV=dev
+MIX_TARGET=host
+MIX_BUILD_ROOT=.elixir-tools/_build
+ROOTDIR=false
+BINDIR=false
+RELEASE_ROOT=false
+RELEASE_SYS_CONFIG=false
+PATH=/usr/bin:/home/dom/.local/share/.burrito/next_ls_erts-15.2_0.23.3/bin:/home/dom/.local/share/nvim/mason/bin:/home/dom/.local/share/solana/install/active_release/bin:/home/dom/.local/bin:/home/dom/.bun/bin:/home/dom/.local/share/solana/install/active_release/bin:/home/dom/.rye/shims:/home/dom/.local/bin:/home/dom/.starkli/bin:/home/dom/.asdf/shims:/home/dom/.asdf/bin:/home/dom/.local/share/pnpm:/home/dom/Developer/miniconda3/bin:/home/dom/Developer/miniconda3/condabin:/home/dom/.bun/bin:/home/dom/.nvm/versions/node/v20.19.0/bin:/home/dom/.cargo/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/usr/lib/wsl/lib:/mnt/c/WINDOWS/system32:/mnt/c/WINDOWS:/mnt/c/WINDOWS/System32/Wbem:/mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0:/mnt/c/WINDOWS/System32/OpenSSH:/mnt/c/Program Files/dotnet:/mnt/c/Program Files/Docker/Docker/resources/bin:/mnt/c/Program Files/Git/cmd:/mnt/c/Program Files/WireGuard:/mnt/c/Program Files/PuTTY:/mnt/c/Users/vito/AppData/Local/Microsoft/WindowsApps:/mnt/c/Program Files/JetBrains/IntelliJ IDEA Community Edition 2024.3/bin:/mnt/c/Users/vito/AppData/Local/Programs/Microsoft VS Code/bin:/snap/bin:/home/dom/.dotnet/tools:/home/dom/.foundry/bin:/home/dom/.foundry/bin:/home/dom/.huff/bin:/home/dom/.local/bin:/home/dom/Utilities/bin:/home/dom/.local/bin:/home/dom/.local/bin:/home/dom/.local/bin:/opt/nvim-linux-x86_64/bin:/home/dom/.local/share/bob/nvim-bin:/home/dom/.local/bin:/home/dom/.dotnet/tools:/home/dom/.foundry/bin:/home/dom/.foundry/bin:/home/dom/.huff/bin:/home/dom/.local/bin:/home/dom/Utilities/bin:/home/dom/.local/bin:/home/dom/.local/bin:/home/dom/.local/bin:/opt/nvim-linux-x86_64/bin:/home/dom/.local/share/bob/nvim-bin:/home/dom/.local/bin
+
+
+14:03:53.368 [debug] handled notification client -> server initialized in 2369ms
+
+14:03:53.372 [debug] handled notification client -> server textDocument/didOpen in 4ms
+
+14:03:54.386 [debug] sent notification server -> client window/logMessage
+
+14:03:54.386 [info] Connected to node nextls-runtime-1753787033367431143@XT12Pro
+
+14:03:54.653 [debug] sent notification server -> client $/progress
+
+14:03:54.655 [debug] sent notification server -> client window/logMessage
+
+14:03:54.655 [debug] Runtime for folder /home/dom/Developer/turbin-3-builders/capstone-airpay-q3/phoenix_dapp is ready...
+
+14:03:54.658 id=196 [debug] sent request server -> client window/workDoneProgress/create
+
+14:03:54.659 [debug] sent notification server -> client $/progress
+
+14:03:54.740 [debug] sent notification server -> client window/logMessage
+
+14:03:54.740 [info] Compiling 2 files (.ex)
+
+
+14:03:54.747 id=260 [debug] sent request server -> client window/workDoneProgress/create
+
+14:03:54.748 [debug] sent notification server -> client $/progress
+
+14:03:54.812 [debug] sent notification server -> client window/logMessage
+
+14:03:54.812 [info]     warning: undefined module attribute @solana_account, please remove access to @solana_account or explicitly set it before access
+    │
+ 12 │       current_account: @solana_account,
+    │       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    │
+    └─ lib/phoenix_dapp_web/live/counter/counter_live.ex:12: PhoenixDappWeb.CounterLive (module)
+
+
+
+14:03:54.918 [debug] sent notification server -> client window/logMessage
+
+14:03:54.918 [info] Generated phoenix_dapp app
+
+
+14:03:54.921 [debug] sent notification server -> client $/progress
+
+14:03:54.921 [debug] sent notification server -> client window/logMessage
+
+14:03:54.921 [info] Compiled /home/dom/Developer/turbin-3-builders/capstone-airpay-q3/phoenix_dapp!
+
+14:03:54.922 [debug] sent notification server -> client textDocument/publishDiagnostics
+
+14:03:54.922 [debug] sent notification server -> client textDocument/publishDiagnostics
+
+14:03:54.983 [debug] sent notification server -> client $/progress
+
+14:04:56.494 [debug] handled notification client -> server textDocument/didClose in 2ms
