@@ -1,16 +1,31 @@
+#![allow(unexpected_cfgs, deprecated)]
 use anchor_lang::prelude::*;
 
-declare_id!("J4aBD9W7P8sij5dLP4KZLiJZrCZXoRFazpGaVhcZuwZZ");
+pub mod state;
+pub mod instructions;
+
+use state::*;
+use instructions::*;
+
+
+
+declare_id!("CGyRkM6NtKZTT4v21omG76zi7Cb7XNxVB1U1LF33zS3h");
 
 #[program]
-pub mod capstone_airpay_q3 {
+pub mod anchor_escrow_q3 {
     use super::*;
 
-    pub fn initialize(ctx: Context<Initialize>) -> Result<()> {
-        msg!("Greetings from: {:?}", ctx.program_id);
+    pub fn initialize(ctx: Context<Make>, seed: u64, deposit: u64, receive: u64) -> Result<()> {
+        ctx.accounts.init_escrow(seed, receive, &ctx.bumps)?;
+        ctx.accounts.deposit(deposit)?;
         Ok(())
+    }
+
+    pub fn take(ctx: Context<Take>) -> Result<()> {
+        ctx.accounts.swap()
     }
 }
 
 #[derive(Accounts)]
 pub struct Initialize {}
+
