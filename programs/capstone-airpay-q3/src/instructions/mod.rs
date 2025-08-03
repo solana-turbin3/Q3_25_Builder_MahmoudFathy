@@ -1,7 +1,5 @@
-pub mod make;
-pub mod refund;
-pub mod take;
+pub mod initialize_invoice_account;
+pub mod initialize_config;
 
-pub use make::*;
-pub use take::*;
-pub use refund::*;
+pub use initialize_invoice_account::*;
+pub use initialize_config::*;
