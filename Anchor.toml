@@ -12,7 +12,7 @@ capstone_airpay_q3 = "J4aBD9W7P8sij5dLP4KZLiJZrCZXoRFazpGaVhcZuwZZ"
 url = "https://api.apr.dev"
 
 [provider]
-cluster = "localnet"
+cluster = "devnet"
 wallet = "~/.config/solana/id.json"
 
 [scripts]
