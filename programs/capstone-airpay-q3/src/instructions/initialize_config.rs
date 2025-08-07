@@ -19,6 +19,7 @@ pub struct InitializeConfig<'info> {
         bump,
     )]
     pub config: Account<'info, Config>,
+    // this mint specifies the Token in which the fees are being paid in
     #[account(
         mint::token_program = token_program
     )]
