@@ -174,17 +174,17 @@ describe("Capstone AirPay Q3 Tests", () => {
     });
 
 
-    it.skip("Should fail to initialize config with same seed twice", async () => {
+    it("Should fail to initialize config with same seed twice", async () => {
 
       const whitelistMints = [mint, mint];
       
       try {
         await program.methods
           .initializeConfig(
+            configSeed, // Same seed as before
             fee,
             basisPoints,
             whitelistMints,
-            configSeed // Same seed as before
           )
           .accountsPartial({
             admin: admin.publicKey,
